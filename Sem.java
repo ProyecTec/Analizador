@@ -1,7 +1,6 @@
 package Tarea;
 
-
-//AQUI SE QUEDA SI SIRVE YA NO SE LE MUEVE 
+ 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -168,7 +167,6 @@ public class Sem {
 
 				if (entrada.equals(encabezado[j])) {
 					columna = j;
-//					print("Encontro id" + j);
 					comp = true;
 				} else
 					j++;
@@ -198,7 +196,6 @@ public class Sem {
 
 	public void Acciones(String edo) {
 
-//		print(edo);
 		if (edo.charAt(0) == 'I') {
 //			System.out.println("Estado I: " + edo);
 			pila.push(entrada);
@@ -239,7 +236,6 @@ public class Sem {
 			nvaFila = pila.peek();
 
 			nvaFila = estado.replace("I", "");
-//			print(Texto[com]);
 			for (int t = 0; t < encabezado.length; t++) {
 				if (entrada.equals(encabezado[t])) {
 					columna = t;
@@ -248,7 +244,6 @@ public class Sem {
 
 			fila = Integer.parseInt(nvaFila);
 			estado = tabla[fila][columna];
-//			print(fila+":"+columna);
 			if (estado.charAt(0) == 'I') {
 				nvaFila = estado.replace("I", "");
 			} else {
@@ -291,13 +286,11 @@ public class Sem {
 			}
 			return lexema;
 		} else if (Variable(lexema)) {
-//			print("entro a variable");
 			if (!tipo_actual.isEmpty()) {
 				// declarar variables
-				// putos ; me tienen hasta la verga
 				try {
 					if (!variables.get(lexema).isEmpty()) {// variable ya existe
-						System.out.println("la variable " + lexema + " ya está declarada");
+						System.out.println("la variable " + lexema + " ya estÃ¡ declarada");
 						return "error";
 					} else {
 						// declara variable
@@ -306,7 +299,6 @@ public class Sem {
 					}
 				} catch (Exception e) {
 					// declara variable
-//					print("entro a variable");
 					variables.put(lexema, tipo_actual);
 					return "id";
 				}
